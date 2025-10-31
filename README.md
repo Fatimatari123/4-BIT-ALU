@@ -1,13 +1,13 @@
 # 4-BIT-ALU
 This is a simple 4-bit ALU implemented in Verilog. It accepts two 4-bit operands and a 3-bit operation selector to perform basic arithmetic and logical operations. Output includes 4-bit Result and status flags.
 # Supported operations
-*Addition
-*Subtraction
-*AND
-*OR
-*XOR
-*~A
-*~B
+* Addition
+* Subtraction
+* AND
+* OR
+* XOR
+* ~A
+* ~B
 # Tools Used
 * Icarus Verilog 12.0   (Simulation)
 * EPWave (EDA Playground)	  (Waveform viewer)
