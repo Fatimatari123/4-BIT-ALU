@@ -1,0 +1,35 @@
+module TB;
+  reg[3:0] A,B;
+  reg[2:0] op_code;
+  wire[3:0] result;
+  wire Z;
+  wire C;
+  alu a(A,B,op_code,result,Z,C);
+  
+
+  initial
+  begin
+    $dumpfile("dump.vcd");
+    $dumpvars(0, TB);
+    //monitor display
+    $monitor("Time=%0t A=%b B=%b op=%b result=%b   Z=%b C=%b",$time, A,B,op_code,result,Z,C);
+    //testcases
+    op_code=3'b000;A=4'b0001;B=4'b0011;
+    #10;
+     op_code=3'b001;A=4'b0001;B=4'b0011;
+    #10;
+     op_code=3'b010;A=4'b0001;B=4'b0011;
+    #10;
+     op_code=3'b011;A=4'b0001;B=4'b0011;
+    #10;
+     op_code=3'b100;A=4'b0001;B=4'b0011;
+    #10;
+     op_code=3'b101;A=4'b0001;B=4'b0011;
+    #10;
+     op_code=3'b110;A=4'b0001;B=4'b0011;
+    #10;
+     op_code=3'b111;A=4'b0001;B=4'b0011;
+    #10;
+             $finish;
+  end
+endmodule

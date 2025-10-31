@@ -1,0 +1,34 @@
+module alu(A,B,op_code,result,Z,C);
+  input[3:0] A,B;
+  input[2:0] op_code;
+  output reg[3:0] result;
+  output reg Z;
+  output reg C;
+  
+  always@(*)
+    begin
+      case(op_code)
+        3'b000:result=0;
+        3'b001:{C,result}=A+B;
+        
+        3'b010:{C,result}=A-B;
+        
+        3'b011:result=A|B;
+        
+        3'b100:result=A&B;
+        
+        3'b101:result=A^B;
+        
+        3'b110:result=~A;
+        
+        3'b111:result=~B;
+        default:result=4'b0000;
+       
+    
+      endcase
+       if(result==4'b0000)
+          Z=1;
+        else
+          Z=0;
+    end
+endmodule
